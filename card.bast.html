@@ -1,0 +1,233 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+  .site-embed, .site-embed * {
+    font-family: 'Architects Daughter', 'Comic Sans MS', 'Trebuchet MS', cursive !important;
+  }
+
+  body {
+    background: #f3e2c7;
+    color: #3a2b2b;
+    margin: 0;
+  }
+
+  .hero {
+    height: 300px;
+    background: url('https://lh7-rt.googleusercontent.com/sitesz/AClOY7pxNc5ni79MQdcInay4Hp8TX9uyMc6VcgxFSpgrZzffBa-zZJFc_biUBjHPwZKCy237NJGsCzdZtjDNxzZpsY-jSBR1DoZH-NUW8fL-g2MTOuRxSgqNzeuDe5A_qSuvOx-5yjj5keQkiYKgdcLKpBe8PtfIrz4Vdsv6vy-u3klUw6ZGhb8wTXLZiEUpcsGo?key=kMQVptjGBVtaI4FN1dX08Q') center/cover no-repeat;
+    margin-bottom: 40px;
+  }
+
+  .content {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* Botões com cara de título */
+  .toggle-btn {
+    background: #f3e2c7;
+    border: 4px solid #d2b38d;
+    padding: 10px 30px;
+    border-radius: 16px;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 40px auto 20px;
+    display: block;
+    color: #3a2b2b;
+  }
+
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+
+    overflow: hidden;
+    max-height: 5000px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: max-height 0.7s ease, opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .cards.hide {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+  }
+
+  .card {
+    background: #fff8ec;
+    width: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  }
+
+  .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .card-content {
+    padding: 16px;
+  }
+
+  .card-content h3 {
+    margin: 0 0 6px;
+    font-size: 26px;
+    color: #FF1E2D;
+  }
+
+  .card-content p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .footer {
+    background: #FF1E2D;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 16px;
+  }
+
+  @media (max-width: 768px) {
+    .toggle-btn {
+      font-size: 26px;
+      padding: 10px 20px;
+    }
+    .card {
+      width: 90%;
+    }
+  }
+</style>
+
+<div class="site-embed" style="width:100%">
+  <div class="hero"></div>
+
+  <div class="content">
+
+    <!-- HAMBÚRGUERES -->
+    <button class="toggle-btn" data-target="hamburgersList">Hambúrgueres</button>
+    <div class="cards hide" id="hamburgersList">
+
+            <div class="card">
+        <img src="https://lh7-rt.googleusercontent.com/sitesz/AClOY7rs2PVUdT0h6rSJgL79jU1puvqNFPiulu5ug_9tEw5x2fdNW81hLkcTuBLtQwFyeWpG0HjtGxlpYSX9bOASVvH6dUpCmBmQNQuOIGzUbM0DAHgPIrjVpsr2LVkjWoseh4Hr6VLxM6nX8rOrtq_4GfFuLfHYkYGUJmSREOtamyWZpHyNdojKxBgjCukW73kd?key=kMQVptjGBVtaI4FN1dX08Q">
+        <div class="card-content">
+          <h3>Bené</h3>
+          <p>Hambúrguer com 180g de blend da casa, American cheese, cebola caramelizada no uísque, sour cream de manjericão no pão australiano.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://lh7-rt.googleusercontent.com/sitesz/AClOY7rjDkZN02yB1Mhe4JEsIwPzPqAY_wP60iMXRbmWYcXJylUHzW5VR1A2z2GlY9NFhtV6GlHyO5eDAZvDJbI6s2-Nm_G32cn_cQnnjf0cOA5yBg9JM_i6KvDtQZSr7JDOjDqeke6PndT8kiLKKNaBK2F2y_5J5tcNgH5S2AdPii_C6HO73q1iKuxBWXGWrmiM?key=kMQVptjGBVtaI4FN1dX08Q">
+        <div class="card-content">
+          <h3>Cheddar</h3>
+          <p>Hambúrguer com 180g de blend da casa, muiiito cheddar, cebola empanada, bacon no pão australiano.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://lh7-rt.googleusercontent.com/sitesz/AClOY7rdvlRPZjPXl2DjCBqOj6heHTklXgI-DLqP0nGLM3DalKeKI5mEYaXSI46XQrlqkTZ_I95nvgEk4Bh0zzBEQmvyA9G5-p3OWt9wJFcqWNXj8E4pxhMvU0leQXikxPpE20-O_WVNyfjnMvV7tqzMaz33tBeWkTuo-0xCOhjZ7K37E-Zj6xcKZIVLgX2AWA?key=kMQVptjGBVtaI4FN1dX08Q">
+        <div class="card-content">
+          <h3>Pedro Pascal</h3>
+          <p>Hambúrguer com 130g de blend da casa, American cheese, cebola na chapa, molho com carne moída apimentada à base de cerveja, no pão brioche.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://lh7-rt.googleusercontent.com/sitesz/AClOY7oEuouH7857mBO7HRoIutimO6IWn89lhdPNqTOvW1wgg7DpGbj1kMcgxGDyXy_kXtg0Wsg-ARpX4E8jpQUAIxK9AYchQd7sEYSAKUzd8FzC3ejaLeP3Gy88T59O7vcaZUFWzgkawBHCvfqFrrRKzb6KqYNNGbjPOr4FTWW460iRb7g4vbjoadC9z00ce3G0?key=kMQVptjGBVtaI4FN1dX08Q">
+        <div class="card-content">
+          <h3>Guineto</h3>
+          <p>Hambúrguer com 180g de blend da casa, American cheese, alface, tomate e aioli no pão brioche.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://lh7-rt.googleusercontent.com/sitesz/AClOY7orCyK_FrnVAiYTRHDqqShKTVGq6VOEmGhisth0TQjU_o61Z6lN0sz-Rb7i5qp0_20FrECbNGG8TMoB9PP4_nnLDFfVC0X-_qPswVuapGuwuDt97ZbssttqWwsXTqSF3eXRFhAZnShF6kWkSxnC6Dd5ekvPOG2jjZAd8t-mbJb7usOqtud6bIpzgYP4rA?key=kMQVptjGBVtaI4FN1dX08Q">
+        <div class="card-content">
+          <h3>Stallone</h3>
+          <p>Hambúrguer com 180g de blend da casa, American cheese, bacon, geleia de pimenta e alface americana no pão brioche.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://lh7-rt.googleusercontent.com/sitesz/AClOY7ooO8KcBjvt5c74BzOUHW_yXZZTsCzKR0_ta1V6WOjg2orqvwgyvTnJzkXCaeE5bUPsytZzCW32KFGdhSVH8CkIp0JYFvlTl6bYT3plgBRQ4KJzHX5DREyII7Kqctr3A2cjZIIvPHe5rbSNFjRuqkC6Uwj0BdeWcJUmIoitbs-8h_M_tGsGAwMy2IK7RILL?key=kMQVptjGBVtaI4FN1dX08Q">
+        <div class="card-content">
+          <h3>Regina Casé</h3>
+          <p>Hambúrguer com 130g de blend da casa, American cheese, presunto, ketchup, maionese e batata palha no pão brioche.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://lh7-rt.googleusercontent.com/sitesz/AClOY7r0THM2W6UFl6GtsOxqDQTTWDDS7Zgzigg30XaSUj4hY5fVfQUDnIih9g7XJ9k9TskHkxBhKE3muOU_xY6MflzHtSIxUPmIXWyx-P1H1pAPQ95-VMGZGU8w7_egUYgFwCB4Yf8kx1YPEqMwmtKsYe9jtBQv-STLciWX1U94xxhslBgyeuFWC7b0VHJcqNf1?key=kMQVptjGBVtaI4FN1dX08Q">
+        <div class="card-content">
+          <h3>Veg Beringela</h3>
+          <p>Beringela empanada, alface, tomate, cebola roxa, American cheese e geleia de pimenta no pão brioche.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- PETISCOS -->
+    <button class="toggle-btn" data-target="petiscosList">Petiscos</button>
+    <div class="cards hide" id="petiscosList">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1604908554168-4d4a9f9f0f91">
+        <div class="card-content">
+          <h3>Batata Frita</h3>
+          <p>Porção de batatas crocantes.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1605478371310-a9f1f27a4a44">
+        <div class="card-content">
+          <h3>Onion Rings</h3>
+          <p>Anéis de cebola empanados.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- BEBIDAS -->
+    <button class="toggle-btn" data-target="bebidasList">Bebidas</button>
+    <div class="cards hide" id="bebidasList">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1598514982901-49f1f9b6b2ab">
+        <div class="card-content">
+          <h3>Refrigerante</h3>
+          <p>Lata 350ml.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f">
+        <div class="card-content">
+          <h3>Suco Natural</h3>
+          <p>Sabores variados.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <strong>📍 Rua Exemplo, 123 - Sua Cidade</strong><br>
+    📞 (00) 00000-0000<br>
+    Instagram: @bastilha
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      const section = document.getElementById(targetId);
+      section.classList.toggle('hide');
+    });
+  });
+</script>
