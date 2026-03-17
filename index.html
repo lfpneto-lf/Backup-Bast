@@ -642,29 +642,38 @@ button {
 <script>
 function toggleSection(id) {
   const sections = document.querySelectorAll('.section');
+  const buttons = document.querySelectorAll('.toggle-btn');
   const current = document.getElementById(id);
-  const clickedButton = event.currentTarget;
 
   const isOpening = !current.classList.contains('open');
 
-  // Fecha todas
+  // Fecha todas as seções
   sections.forEach(section => {
     section.classList.remove('open');
   });
 
-  // Se for abrir
+  // Abre a atual
   if (isOpening) {
     current.classList.add('open');
 
-    // ⏱️ ESPERA A ANIMAÇÃO TERMINAR (ESSENCIAL)
-    setTimeout(() => {
-      const y = clickedButton.offsetTop - 20;
+    // 🔍 Encontra o botão correto baseado na posição
+    let button = null;
 
-      window.scrollTo({
-        top: y,
-        behavior: 'smooth'
-      });
-    }, 500); // tempo maior que a animação (0.8s CSS → usamos ~500ms)
+    buttons.forEach(btn => {
+      if (btn.getAttribute('onclick').includes(id)) {
+        button = btn;
+      }
+    });
+
+    // Scroll seguro (SEM BUG)
+    if (button) {
+      setTimeout(() => {
+        window.scrollTo({
+          top: button.offsetTop - 20,
+          behavior: 'smooth'
+        });
+      }, 100);
+    }
   }
 }
 </script>
